@@ -44,3 +44,23 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+
+
+// User input needed:
+// description of project
+// installation instructions for project
+// usage information
+// contribution guidelines
+// test instructions
+// user input also needed: for contact purposes
+// github username
+// email address
+
+// user choose license information out of list
+// relevant badge for license is added to readme
+// section in readme explains the license it's covered under
+
+// save user responses
+// attach user responses to their relevant sections
+
