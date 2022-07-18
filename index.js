@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 //TODO:added questions, however, I'm wondering if the below needs to be laid out differently. 1. either to fit better with the const questions, or to reformat to be inquirer.prompt([questions inside here like below]) have both for now
 
 // array of questions
-const questions = ["What is the title of your project?","Please give a brief description of your project.", "Please describe the steps for installation for your intended users.", "Please give a concise description on the intended usage of your project.", "Please describe what the guidelines are for those who may wish to contribute to your project.", "Please describe the steps necessary in order to test your project."]
+// const questions = ["What is the title of your project?","Please give a brief description of your project.", "Please describe the steps for installation for your intended users.", "Please give a concise description on the intended usage of your project.", "Please describe what the guidelines are for those who may wish to contribute to your project.", "Please describe the steps necessary in order to test your project."]
 
 // inquirer for prompt of same questions above.
 inquirer.prompt([
@@ -38,11 +38,26 @@ inquirer.prompt([
         message: "Please describe the steps necessary in order to test your project.",
         type: 'input',
         name: 'test',
+    },
+    {
+        message: "Which license would you like to use?",
+        type: 'checkbox',
+        choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC", "Unilicense", "Boost Software License", "Mozilla Public License 2.0"],
+    },
+    {
+        message: "What is your Github username?",
+        type: 'input',
+        name: 'github',
+    },
+    {
+        message: "What is your email address?",
+        type: 'input',
+        name: 'email',
     }
 ]);
 
 // input questions for the contact info
-const contactInfo = ["What is your Github username?", "What is your email address?"]
+// const contactInfo = ["What is your Github username?", "What is your email address?"]
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -69,6 +84,9 @@ init();
 // email address
 
 // user choose license information out of list
+    // does the license choice happen in here, the index, or in the generate markdown js???
+    // license options:
+        // apache license 2.0, GNU GPLv3, MIT, ISC, unilicense, boost softward license, mozilla public license 2.0
 // relevant badge for license is added to readme
 // section in readme explains the license it's covered under
 
