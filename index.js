@@ -54,7 +54,16 @@ inquirer.prompt([
         type: 'input',
         name: 'email',
     }
-]);
+    // below is my understanding for taking those responses and making a file from it??
+]).then(responses=>{
+    fs.writeFile(`./output/${responses.name}.json`, JSON.stringify(responses,null)),(err, data)=> { 
+        if(err){
+            throw err
+        }
+        console.log("yay!");
+    }});
+
+
 
 // input questions for the contact info
 // const contactInfo = ["What is your Github username?", "What is your email address?"]
