@@ -27,3 +27,4 @@ ${responses.test}
 ${responses.license}
 
 ## Credits
+${responses.credits}

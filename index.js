@@ -7,9 +7,38 @@ const fs = require('fs');
 
 
 // README template below:
+// [title, description, install, usage, guidelines, test, license, github, email]
+// const generateREADME = () =>
+//     `# ${responses.title}
 
-const generateREADME = (title, description, install, usage, guidelines, test, license, github, email) =>
-    ``
+//     ## Description
+//     ${responses.description}
+    
+//     ## Table of Contents
+//     1. [Installation](#Installation)
+//     2. [Usage](#Usage)
+//     3. [Contribution Guidelines](#Contribution-Guidelines)
+//     4. [Testing](#Testing)
+//     5. [Licensing](#Licensing)
+//     6. [Credits](#Credits)
+    
+//     ## Installation
+//     ${responses.install}
+    
+//     ## Usage
+//     ${responses.usage}
+    
+//     ## Contribution Guidelines
+//     ${responses.guidelines}
+    
+//     ## Testing
+//     ${responses.test}
+    
+//     ## Licensing
+//     ${responses.license}
+    
+//     ## Credits
+//     ${responses.credits}`
 
 
 // array of questions
@@ -17,6 +46,8 @@ const generateREADME = (title, description, install, usage, guidelines, test, li
 
 // inquirer for prompt of same questions above.
 inquirer.prompt([
+// const promptQuestions = () => {
+//     return inquirer.prompt([
     {
         message: 'What is the title of your project?',
         type: 'input',
@@ -49,12 +80,11 @@ inquirer.prompt([
     },
     {
         message: "Please list any resources you may have used or referred to.",
-        type: 'list',
+        type: 'input',
         name: 'credits',
-        
     },
     {
-        message: "Which license would you like to use?",
+        message: "Which license would you like to use? Use the up and down arrows to scroll through the options, press the spacebar to select one.",
         type: 'checkbox',
         name: 'license',
         choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC", "Unilicense", "Boost Software License", "Mozilla Public License 2.0"],
@@ -72,26 +102,59 @@ inquirer.prompt([
     // below is my understanding for taking those responses and making a file from it??
 ]).then((responses)=>{
         console.log(responses);
-        const content = generateREADME (responses);
-        fs.writeFile('userREADME.md', content, (err)=> err ? console.log(err) : console.log('Yay! You made a README!'));
+        // const data = generateREADME(responses);
+        fs.writeFile(`./output/${responses.title}README.md`,`# ${responses.title}
+        ## Description
+        ${responses.description}
+        ## Table of Contents
+        1. [Installation](#Installation)
+        2. [Usage](#Usage)
+        3. [Contribution Guidelines](#Contribution-Guidelines)
+        4. [Testing](#Testing)
+        5. [Licensing](#Licensing)
+        6. [Credits](#Credits)
+        ## Installation
+        ${responses.install}
+        ## Usage
+        ${responses.usage}
+        ## Contribution Guidelines
+        ${responses.guidelines}
+        ## Testing
+        ${responses.test}
+        ## Licensing
+        ${responses.license}
+        ## Credits
+        ${responses.credits}`, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
+        // fs.writeFile('userREADME.md', data, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
+        // console.error(err) <-- line 135 
 })
 
+
+// const init = () => {
+//     promptQuestions()
+//     .then((responses => fs.writeFileSync('userREADME.md', generateREADME(responses))))
+//     .then(()=> console.log("Good job!"))
+//     .catch((err) => console.log(err))
+// }
+
+// init();
 
 
 // input questions for the contact info
 // const contactInfo = ["What is your Github username?", "What is your email address?"]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    console.log(responses)
-    fs.writeFile(`./output/${responses.name}.json`, JSON.stringify(responses,null,))
-}
+
+// function writeToFile(fileName, data) {
+//     console.log(responses)
+//     fs.writeFile(`./output/${responses.name}.json`, JSON.stringify(responses,null,))
+// }
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
 
 
 
