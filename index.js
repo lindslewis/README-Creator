@@ -40,10 +40,6 @@ const generateREADME = (responses) =>
     ## Credits
     ${responses.credits}`
 
-
-// array of questions
-// const questions = ["What is the title of your project?","Please give a brief description of your project.", "Please describe the steps for installation for your intended users.", "Please give a concise description on the intended usage of your project.", "Please describe what the guidelines are for those who may wish to contribute to your project.", "Please describe the steps necessary in order to test your project."]
-
 // inquirer for prompt of same questions above.
 inquirer.prompt([
 // const promptQuestions = () => {
