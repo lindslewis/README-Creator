@@ -6,36 +6,36 @@ const fs = require('fs');
 
 // README template below:
 const generateREADME = (responses) =>
-    `# ${responses.title}
+`# ${responses.title}
 
-    ## Description
-    ${responses.description}
+## Description
+${responses.description}
+
+## Table of Contents
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+3. [Contribution Guidelines](#Contribution-Guidelines)
+4. [Testing](#Testing)
+5. [Licensing](#Licensing)
+6. [Credits](#Credits)
+
+## Installation
+${responses.install}
     
-    ## Table of Contents
-    1. [Installation](#Installation)
-    2. [Usage](#Usage)
-    3. [Contribution Guidelines](#Contribution-Guidelines)
-    4. [Testing](#Testing)
-    5. [Licensing](#Licensing)
-    6. [Credits](#Credits)
+## Usage
+${responses.usage}
     
-    ## Installation
-    ${responses.install}
+## Contribution Guidelines
+${responses.guidelines}
     
-    ## Usage
-    ${responses.usage}
+## Testing
+${responses.test}
     
-    ## Contribution Guidelines
-    ${responses.guidelines}
+## Licensing
+${responses.license}
     
-    ## Testing
-    ${responses.test}
-    
-    ## Licensing
-    ${responses.license}
-    
-    ## Credits
-    ${responses.credits}`
+## Credits
+${responses.credits}`
 
 // inquirer for prompts for userinputs.
 inquirer.prompt([
