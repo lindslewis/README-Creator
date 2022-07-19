@@ -2,12 +2,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Create an array of questions for user input
-//added questions, however, I'm wondering if the below needs to be laid out differently. 1. either to fit better with the const questions, or to reformat to be inquirer.prompt([questions inside here like below]) have both for now
 
 
 // README template below:
-// [title, description, install, usage, guidelines, test, license, github, email]
 const generateREADME = (responses) =>
     `# ${responses.title}
 
@@ -40,10 +37,8 @@ const generateREADME = (responses) =>
     ## Credits
     ${responses.credits}`
 
-// inquirer for prompt of same questions above.
+// inquirer for prompts for userinputs.
 inquirer.prompt([
-// const promptQuestions = () => {
-//     return inquirer.prompt([
     {
         message: 'What is the title of your project?',
         type: 'input',
@@ -101,8 +96,6 @@ inquirer.prompt([
         const data = generateREADME(responses);
         fs.writeFile(`./output/${responses.title}README.md`, data,
     (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
-        // fs.writeFile('userREADME.md', data, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
-        // console.error(err) <-- line 135 
 })
 
 
