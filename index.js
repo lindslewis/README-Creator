@@ -103,28 +103,46 @@ inquirer.prompt([
 ]).then((responses)=>{
         console.log(responses);
         // const data = generateREADME(responses);
-        fs.writeFile(`./output/${responses.title}README.md`,`# ${responses.title}
-        ## Description
-        ${responses.description}
-        ## Table of Contents
-        1. [Installation](#Installation)
-        2. [Usage](#Usage)
-        3. [Contribution Guidelines](#Contribution-Guidelines)
-        4. [Testing](#Testing)
-        5. [Licensing](#Licensing)
-        6. [Credits](#Credits)
-        ## Installation
-        ${responses.install}
-        ## Usage
-        ${responses.usage}
-        ## Contribution Guidelines
-        ${responses.guidelines}
-        ## Testing
-        ${responses.test}
-        ## Licensing
-        ${responses.license}
-        ## Credits
-        ${responses.credits}`, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
+        fs.writeFile(`./output/${responses.title}README.md`,
+`# ${responses.title}
+
+## Description
+
+${responses.description}
+
+## Table of Contents
+
+1. [Installation](#Installation)
+2. [Usage](#Usage)
+3. [Contribution Guidelines](#Contribution-Guidelines)
+4. [Testing](#Testing)
+5. [Licensing](#Licensing)
+6. [Credits](#Credits)
+
+## Installation
+
+${responses.install}
+
+## Usage
+
+${responses.usage}
+
+## Contribution Guidelines
+
+${responses.guidelines}
+
+## Testing
+
+${responses.test}
+
+## Licensing
+
+${responses.license}
+
+## Credits
+
+${responses.credits}`,
+    (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
         // fs.writeFile('userREADME.md', data, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
         // console.error(err) <-- line 135 
 })
