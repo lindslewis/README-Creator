@@ -1,4 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+
+// licenses chosen for inclusion: 
+// Apache License 2.0
+// MIT
+// ISC
+// Mozilla Public License 2.0
+
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
 

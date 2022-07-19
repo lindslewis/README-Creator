@@ -78,7 +78,7 @@ inquirer.prompt([
         message: "Which license would you like to use? Use the up and down arrows to scroll through the options, press the spacebar to select one.",
         type: 'checkbox',
         name: 'license',
-        choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC", "Unilicense", "Boost Software License", "Mozilla Public License 2.0"],
+        choices: ["Apache License 2.0", "MIT", "ISC", "Mozilla Public License 2.0"],
     },
     {
         message: "What is your Github username?",
@@ -108,11 +108,7 @@ inquirer.prompt([
 
 // init();
 
-
-// input questions for the contact info
-// const contactInfo = ["What is your Github username?", "What is your email address?"]
-
-// TODO: Create a function to write README file
+// Create a function to write README file
 
 // function writeToFile(fileName, data) {
 //     console.log(responses)
