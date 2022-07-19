@@ -3,42 +3,42 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Create an array of questions for user input
-//TODO:added questions, however, I'm wondering if the below needs to be laid out differently. 1. either to fit better with the const questions, or to reformat to be inquirer.prompt([questions inside here like below]) have both for now
+//added questions, however, I'm wondering if the below needs to be laid out differently. 1. either to fit better with the const questions, or to reformat to be inquirer.prompt([questions inside here like below]) have both for now
 
 
 // README template below:
 // [title, description, install, usage, guidelines, test, license, github, email]
-// const generateREADME = () =>
-//     `# ${responses.title}
+const generateREADME = (responses) =>
+    `# ${responses.title}
 
-//     ## Description
-//     ${responses.description}
+    ## Description
+    ${responses.description}
     
-//     ## Table of Contents
-//     1. [Installation](#Installation)
-//     2. [Usage](#Usage)
-//     3. [Contribution Guidelines](#Contribution-Guidelines)
-//     4. [Testing](#Testing)
-//     5. [Licensing](#Licensing)
-//     6. [Credits](#Credits)
+    ## Table of Contents
+    1. [Installation](#Installation)
+    2. [Usage](#Usage)
+    3. [Contribution Guidelines](#Contribution-Guidelines)
+    4. [Testing](#Testing)
+    5. [Licensing](#Licensing)
+    6. [Credits](#Credits)
     
-//     ## Installation
-//     ${responses.install}
+    ## Installation
+    ${responses.install}
     
-//     ## Usage
-//     ${responses.usage}
+    ## Usage
+    ${responses.usage}
     
-//     ## Contribution Guidelines
-//     ${responses.guidelines}
+    ## Contribution Guidelines
+    ${responses.guidelines}
     
-//     ## Testing
-//     ${responses.test}
+    ## Testing
+    ${responses.test}
     
-//     ## Licensing
-//     ${responses.license}
+    ## Licensing
+    ${responses.license}
     
-//     ## Credits
-//     ${responses.credits}`
+    ## Credits
+    ${responses.credits}`
 
 
 // array of questions
@@ -102,46 +102,8 @@ inquirer.prompt([
     // below is my understanding for taking those responses and making a file from it??
 ]).then((responses)=>{
         console.log(responses);
-        // const data = generateREADME(responses);
-        fs.writeFile(`./output/${responses.title}README.md`,
-`# ${responses.title}
-
-## Description
-
-${responses.description}
-
-## Table of Contents
-
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [Contribution Guidelines](#Contribution-Guidelines)
-4. [Testing](#Testing)
-5. [Licensing](#Licensing)
-6. [Credits](#Credits)
-
-## Installation
-
-${responses.install}
-
-## Usage
-
-${responses.usage}
-
-## Contribution Guidelines
-
-${responses.guidelines}
-
-## Testing
-
-${responses.test}
-
-## Licensing
-
-${responses.license}
-
-## Credits
-
-${responses.credits}`,
+        const data = generateREADME(responses);
+        fs.writeFile(`./output/${responses.title}README.md`, data,
     (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
         // fs.writeFile('userREADME.md', data, (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
         // console.error(err) <-- line 135 
