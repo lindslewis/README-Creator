@@ -1,7 +1,5 @@
-# proj
-
-
-
+# 
+Apache License 2.0
 ## Description
 proj
 
@@ -17,7 +15,7 @@ proj
 proj
     
 ## Usage
-proj
+prj
     
 ## Contribution Guidelines
 proj
@@ -28,7 +26,7 @@ proj
 ## Licensing
 I have elected to use Apache License 2.0.
 
- 
+Apache License 2.0
     
 ## Credits
 proj
