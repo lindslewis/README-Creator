@@ -2,6 +2,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const renderBadge = {};
+
+
+
+
 // const license = (responses.license);
 
 // const generateMarkdown = require('./utils/generateMarkdown');
@@ -110,46 +115,47 @@ inquirer.prompt([
 ]).then((responses)=>{
         console.log(responses);
         let data = generateREADME(responses);
+
         // const data = generateREADME(responses);
         fs.writeFile(`./output/${responses.title}README.md`, data,
     (err)=>  err ? console.log(err) : console.log('Yay! You made a README!'));
 
-    let badge = (license) => {
-        // function renderLicenseBadge(license) {
-            if(license === "Apache License 2.0") {
+    const badge = (responses) => {
+        // function badge(license) {
+            if(responses.license === "Apache License 2.0") {
               return '![Apache](https://img.shields.io/badge/license-Apache%202.0-blue)';
-            } if(license === "MIT") {
+            } if(responses.license === "MIT") {
               return '![MIT](https://img.shields.io/badge/license-MIT-blue)';
-            } if (license === "General Public License (GPL)") {
+            } if (responses.license === "General Public License (GPL)") {
               return '![GPL](https://img.shields.io/badge/license-GPL-blue)'
-            } if (license === "Mozilla Public License 2.0 (MPL)") {
+            } if (responses.license === "Mozilla Public License 2.0 (MPL)") {
               return '![MPL](https://img.shields.io/badge/license-MPL%202.0-blue)'
-            } if (license === "none") {
+            } if (responses.license === "none") {
               return ' '
             } else {
               return ' '
             }
         }
-        let licenseLink = (license) => {
-        // function renderLicenseLink(license) {
-            if(license === "Apache License 2.0") {
+        let licenseLink = (responses) => {
+        // function link(license) {
+            if(responses.license === "Apache License 2.0") {
               return '![Apache License 2.0](https://opensource.org/licenses/Apache-2.0)';
-            } if (license === "MIT") {
+            } if (responses.license === "MIT") {
               return '![MIT](https://opensource.org/licenses/MIT)';
-            } if (license === "General Public License (GPL)") {
+            } if (responses.license === "General Public License (GPL)") {
               return '![General Public License](https://opensource.org/licenses/gpl-license)'
-            } if (license === "Mozilla Public License 2.0 (MPL)") {
+            } if (responses.license === "Mozilla Public License 2.0 (MPL)") {
               return '![Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)'
-            } if (license === "none") {
+            } if (responses.license === "none") {
               return ' '
             } else {
               return ' '
             }
         }
         
-        let licenseSection = (license) => {
-        // function renderLicenseSection(license) {
-            if (license === "Apache License 2.0"){
+        let licenseSection = (responses) => {
+        // function licenseSection(license) {
+            if (responses.license === "Apache License 2.0"){
               return `Copyright ${responses.year} ${responses.name}
           
               Licensed under the Apache License, Version 2.0 (the "License");
@@ -163,7 +169,7 @@ inquirer.prompt([
               WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
               See the License for the specific language governing permissions and
               limitations under the License.`;
-            } if (license === "MIT") {
+            } if (responses.license === "MIT") {
               return `Copyright (c) ${responses.year} ${responses.name}
           
               Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -183,7 +189,7 @@ inquirer.prompt([
               LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
               OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
               SOFTWARE.`;
-            } if (license === "General Public License (GPL)") {
+            } if (responses.license === "General Public License (GPL)") {
               return `
               Copyright (C) ${responses.year} ${responses.name}
               
@@ -192,15 +198,19 @@ inquirer.prompt([
               This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
               
               You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA`
-            } if (license === "Mozilla Public License 2.0 (MPL)") {
+            } if (responses.license === "Mozilla Public License 2.0 (MPL)") {
               return `This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.`
-            } if (license === "none") {
+            } if (responses.license === "none") {
               return ' '
             } else {
               return ' '
             }
           }
+
+        //   const license = licenseLink.concat(licenseSection);
 })
+
+
 // const license = (responses.license);
 
 // maybe I need to append them together???
