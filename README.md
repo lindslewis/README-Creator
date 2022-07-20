@@ -17,6 +17,7 @@ Utilizing node.js and inquirer, users are able to use command lines in their ter
 ![sample README](sample-readme.jpg)
 
 ## Walkthrough Video
+![video walkthrough](https://user-images.githubusercontent.com/104105172/179907140-2ae720a2-56eb-44d3-9cb6-4c0544d07416.mp4)
 
 ## Installation
 Simply make sure you have the index.js file containing this code in your workspace. Also make sure to have inquirer installed by typing ``npm i inquirer`` into your terminal, once you have navigated to your desired directory location. From there, simply type ``node index.js`` in order to begin the prompts to write your README.
@@ -38,3 +39,5 @@ No licensing at this time.
 2. MDN Web Docs
 3. Request-Response The Full Stack Blog: Professional README Guide
 4. w3schools
+
+
