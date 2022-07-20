@@ -4,12 +4,19 @@
 Utilizing node.js and inquirer, users are able to use command lines in their terminals in order to create a robust README file, simply by following the prompts in the terminal. 
 
 ## Table of Contents
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3.[Contribution Guidelines](#Contribution-Guidelines)
-4.[Testing](#Testing)
-5. [Licensing](#Licensing)
-6. [Credits](#Credits)
+1. [Sample README](#Sample-README)
+2. [Walkthrough Video](#Walkthrough-Video)
+3. [Installation](#Installation)
+4. [Usage](#Usage)
+5. [Contribution Guidelines](#Contribution-Guidelines)
+6. [Testing](#Testing)
+7. [Licensing](#Licensing)
+8. [Credits](#Credits)
+
+## Sample README
+![sample README](sample-readme.jpg)
+
+## Walkthrough Video
 
 ## Installation
 Simply make sure you have the index.js file containing this code in your workspace. Also make sure to have inquirer installed by typing ``npm i inquirer`` into your terminal, once you have navigated to your desired directory location. From there, simply type ``node index.js`` in order to begin the prompts to write your README.
