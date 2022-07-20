@@ -10,7 +10,7 @@ const fs = require('fs');
 // README template below:
 const generateREADME = (responses) =>
 `# ${responses.title}
-${responses.license.badge}
+${responses.license}
 ## Description
 ${responses.description}
 
@@ -35,9 +35,9 @@ ${responses.guidelines}
 ${responses.test}
     
 ## Licensing
-I have elected to use ${responses.license.licenseLink}.
+I have elected to use ${responses.license}.
 
-${responses.license.licenseSection}
+${responses.license}
     
 ## Credits
 ${responses.credits}`
